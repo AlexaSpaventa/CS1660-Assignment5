@@ -1,19 +1,4 @@
-name: Deploy to Google Cloud
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Authenticate with Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          service_account: my-service-account@my-project.iam.gserviceaccount.com
-          workload_identity_provider: projects/414172352588/locations/global/workloadIdentityPools/github/providers/my-repo
+- uses: 'google-github-actions/auth@v2'
+  with:
+    service_account: 'my-service-account@my-project.iam.gserviceaccount.com'
+    workload_identity_provider: 'projects/414172352588/locations/global/workloadIdentityPools/github/providers/my-repo'
